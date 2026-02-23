@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import regionData from "../data/indonesia_regions.json";
 
 type Province = { id: number; name: string };
