@@ -71,28 +71,27 @@ export default function FilterPage() {
   const districtName = data.districts.find((d) => d.id === selectedDistrict)?.name;
 
   return (
-    <div className="flex min-h-screen bg-gray-100 overflow-x-hidden">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100">
 
-      {/* SIDEBAR - Fixed di kiri */}
-      <aside className="w-80 h-screen fixed left-0 top-0 bg-white border-r border-gray-200 flex flex-col flex-shrink-0 overflow-y-auto">
+      <aside className="w-full lg:w-80 lg:h-screen lg:fixed lg:left-0 lg:top-0 bg-white border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col shrink-0 order-2 lg:order-1">
 
         {/* HEADER */}
-        <div className="px-6 py-6 border-b border-gray-200">
+        <div className="px-4 lg:px-6 py-4 lg:py-6 border-b border-gray-200">
           <h1 className="text-lg font-bold text-gray-800">
             Frontend Assessment
           </h1>
         </div>
 
         {/* FILTER AREA */}
-        <div className="px-6 py-6 flex-1 flex flex-col justify-between">
+        <div className="px-4 lg:px-6 py-4 lg:py-6 flex-1 flex flex-col justify-between">
 
           <div>
-            <p className="text-xs font-semibold text-gray-400 tracking-widest mb-6">
+            <p className="text-xs font-semibold text-gray-400 tracking-widest mb-5">
               FILTER WILAYAH
             </p>
 
             {/* PROVINSI */}
-            <div className="mb-5">
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 Provinsi
               </label>
@@ -115,7 +114,7 @@ export default function FilterPage() {
             </div>
 
             {/* KOTA/KABUPATEN */}
-            <div className="mb-5">
+            <div className="mb-4">
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 Kota/Kabupaten
               </label>
@@ -138,7 +137,7 @@ export default function FilterPage() {
             </div>
 
             {/* KECAMATAN */}
-            <div className="mb-6">
+            <div className="mb-5">
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 Kecamatan
               </label>
@@ -169,37 +168,36 @@ export default function FilterPage() {
         </div>
       </aside>
 
-      {/* MAIN - Di kanan sidebar */}
-      <main className="ml-80 flex-1 flex flex-col min-h-screen">
+      <main className="flex-1 flex flex-col order-1 lg:order-2 lg:ml-80">
 
         {/* BREADCRUMB */}
-        <div className="breadcrumb bg-white border-b border-gray-200 py-6">
-        <div className="px-16 text-sm text-gray-500">
-          Indonesia
-          {provinceName && ` › ${provinceName}`}
-          {regencyName && ` › ${regencyName}`}
-          {districtName && ` › ${districtName}`}
+        <div className="breadcrumb bg-white border-b border-gray-200 py-4 lg:py-5 px-4 lg:px-8">
+          <div className="text-sm text-gray-500">
+            Indonesia
+            {provinceName && ` › ${provinceName}`}
+            {regencyName && ` › ${regencyName}`}
+            {districtName && ` › ${districtName}`}
+          </div>
         </div>
-      </div>
 
         {/* CONTENT */}
-        <div className="flex-1 bg-gray-50 flex items-center justify-center p-8">
+        <div className="flex-1 bg-gray-50 flex items-center justify-center p-4 lg:p-8">
 
-          <div className="text-center space-y-10">
+          <div className="text-center space-y-8 lg:space-y-10">
 
             {provinceName && (
               <div className="space-y-2">
                 <p className="text-xs tracking-[0.3em] text-blue-500 font-semibold">
                   PROVINSI
                 </p>
-                <h1 className="text-5xl font-bold text-gray-800">
+                <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
                   {provinceName}
                 </h1>
               </div>
             )}
 
             {provinceName && regencyName && (
-              <div className="text-gray-400 text-3xl">↓</div>
+              <div className="text-gray-400 text-2xl lg:text-3xl">↓</div>
             )}
 
             {regencyName && (
@@ -207,14 +205,14 @@ export default function FilterPage() {
                 <p className="text-xs tracking-[0.3em] text-blue-500 font-semibold">
                   KOTA / KABUPATEN
                 </p>
-                <h1 className="text-4xl font-bold text-gray-800">
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800">
                   {regencyName}
                 </h1>
               </div>
             )}
 
             {regencyName && districtName && (
-              <div className="text-gray-400 text-3xl">↓</div>
+              <div className="text-gray-400 text-2xl lg:text-3xl">↓</div>
             )}
 
             {districtName && (
@@ -222,7 +220,7 @@ export default function FilterPage() {
                 <p className="text-xs tracking-[0.3em] text-blue-500 font-semibold">
                   KECAMATAN
                 </p>
-                <h1 className="text-3xl font-bold text-gray-800">
+                <h1 className="text-2xl lg:text-3xl font-bold text-gray-800">
                   {districtName}
                 </h1>
               </div>
