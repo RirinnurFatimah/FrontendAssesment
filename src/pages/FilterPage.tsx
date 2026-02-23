@@ -171,14 +171,14 @@ export default function FilterPage() {
       <main className="flex-1 flex flex-col order-1 lg:order-2 lg:ml-80">
 
         {/* BREADCRUMB */}
-        <div className="breadcrumb bg-white border-b border-gray-200 py-4 lg:py-5 px-4 lg:px-8">
-          <div className="text-sm text-gray-500">
-            Indonesia
-            {provinceName && ` › ${provinceName}`}
-            {regencyName && ` › ${regencyName}`}
-            {districtName && ` › ${districtName}`}
-          </div>
+        <div className="breadcrumb bg-white border-b border-gray-200 py-6">
+        <div className="px-16 text-sm text-gray-500">
+          Indonesia
+          {provinceName && ` › ${provinceName}`}
+          {regencyName && ` › ${regencyName}`}
+          {districtName && ` › ${districtName}`}
         </div>
+      </div>
 
         {/* CONTENT */}
         <div className="flex-1 bg-gray-50 flex items-center justify-center p-4 lg:p-8">
