@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Custom breadcrumb class */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 0;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  content: "";
+  padding: 0 0.5rem;
+  color: #6b7280;
+}
